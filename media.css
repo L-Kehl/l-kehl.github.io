@@ -1,0 +1,24 @@
+@media all and (max-width: 750px) {
+  .card {
+    width: 90vw;
+    height: 40vh;
+  }
+  #box {
+    background-image: url(bac2.jpg);
+    background-size: 100vw;
+    color: #51c4d3;
+    font-size: 1rem;
+  }
+}
+
+@media all and (min-width: 750px) {
+  .card {
+    width: 700px;
+    height: 300px;
+  }
+  #box {
+    background-image: url(bac.jpg);
+    color: #fff;
+    font-size: 40px;
+  }
+}
