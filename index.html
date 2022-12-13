@@ -4,19 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>letter</title>
-    <link rel="stylesheet" href="media.css" />
-    <link rel="stylesheet" href="letter.css" />
+    <title>Test Ajax</title>
+    <script crossorigin="anonymous" src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-
   <body>
-    <div class="card">
-      <div class="text content">隐约雷鸣</div>
-      <div class="textTwo content">阴霾天空</div>
-      <div class="heart content"></div>
-    </div>
+    <span></span>
+    <button>GET</button>
 
-    <div id="box"></div>
-    <script src="letter.js"></script>
+    <script>
+      const btn = document.querySelector('button')
+      const span = document.querySelector('span')
+      btn.onclick = function () {
+        axios
+          .get('https://api.uixsj.cn/hitokoto/get?type=social')
+          .then(result => {
+            console.log(result)
+            span.innerHTML = result.data
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
+    </script>
   </body>
 </html>
